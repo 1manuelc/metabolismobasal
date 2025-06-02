@@ -2,7 +2,7 @@
 
 # metabolismobasal
 
-[English](/locales/en-US/README_EN.md) | [Spanish](/locales/es-ES/README_ES.md) | [French](/locales/fr-FR/README_FR.md) | [Malay](/locales/my-MY/README_MS.md) | [Polish](/locales/pl-PL/README_PL.md) | [Japanese](/locales/ja-JP/README_ja.md) | [Italian](/locales/it-IT/README_IT.md) | [Portuguese](/locales/pt-BR/README_BR.md)
+[English](/public/locales/en-US/README_EN.md) | [Spanish](/public/locales/es-ES/README_ES.md) | [French](/public/locales/fr-FR/README_FR.md) | [Malay](/public/locales/my-MY/README_MS.md) | [Polish](/public/locales/pl-PL/README_PL.md) | [Japanese](/public/locales/ja-JP/README_ja.md) | [Italian](/public/locales/it-IT/README_IT.md) | [Portuguese](/public/locales/pt-BR/README_BR.md)
 
 # Calculadora Índice de Massa corporal - Calorias
 

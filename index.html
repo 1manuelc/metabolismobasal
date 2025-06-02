@@ -1,142 +1,301 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" href="./public/images/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" href="./public/images/favicon.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
 
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+		<title data-locale="page-title">Calculadora de Taxa Metabólica Basal</title>
 
-  <title>Calculadora de Taxa Metabólica Basal</title>
+		<link rel="stylesheet" type="text/css" href="public/styles/style.css" />
+		<link rel="icon" href="./public/images/favicon.png" />
+	</head>
 
-  <link rel="stylesheet" type="text/css" href="public/styles/style.css" />
-  <link rel="icon" href="./public/images/favicon.png" />
-  
-  <script src="./public/scripts/scripts_PT.cjs"></script>
-  <script src="./public/scripts/scripts.cjs"></script>
-  <script src="./public/scripts/shared.js"></script>
-</head>
+	<body lang="pt-br">
+		<div class="lan-bar-top">
+			<div class="custom-dropdown">
+				<div class="dropdown-header">
+					<span data-locale="language-dropdown-span">Idioma:</span>
+					<img
+						data-locale="language-dropdown-flag"
+						src="./public/images/flag-br.png"
+					/>
+				</div>
+				<ul class="dropdown-list" id="lang-switcher">
+					<li data-lang="pt-BR">
+						<img
+							class="flag"
+							src="./public/images/flag-br.png"
+							alt="Português (Brasil)"
+							title="Português (Brasil)"
+						/>
+					</li>
+					<li data-lang="es-ES">
+						<img
+							class="flag"
+							src="./public/images/flag-es.png"
+							alt="Español"
+							title="Español"
+						/>
+					</li>
+					<li data-lang="it-IT">
+						<img
+							class="flag"
+							src="./public/images/flag-it.png"
+							alt="Italiano"
+							title="Italiano"
+						/>
+					</li>
+					<li data-lang="en-US">
+						<img
+							class="flag"
+							src="./public/images/flag-us.png"
+							alt="English"
+							title="English"
+						/>
+					</li>
+				</ul>
+			</div>
+		</div>
 
-<body lang="pt-br" onload="Inicializar()">
-  <div class="lan-bar-top">
-    <div class="custom-dropdown">
-      <div class="dropdown-header">
-        <span>Idioma: </span>
-        <img src="./public/images/flag-br.png">
-      </div>
-      <ul class="dropdown-list">
-        <li><a href="./index.html" target="_blank" title="Português (Brasil)"><img class="flag"
-              src="./public/images/flag-br.png"></a></li>
-        <li><a href="./public/pages/index_ES.html" target="_blank" title="Espanhol"><img class="flag"
-              src="./public/images/flag-es.png"></a></li>
-        <li><a href="./public/pages/index_it.html" target="_blank" title="Italiano"><img class="flag"
-              src="./public/images/flag-it.png"></a></li>
-        <li><a href="./public/pages/index_en.html" target="_blank" title="Inglês"><img class="flag"
-              src="./public/images/flag-us.png"></a></li>
-      </ul>
-    </div>
-  </div>
+		<header>
+			<img src="./public/images/calcCal.png" alt="calorias" class="logo" />
+			<h1 data-locale="header-title" class="title beauty-shadow">
+				Calculadora Taxa Metabólica Basal
+			</h1>
+		</header>
 
-  <header>
-    <img src="./public/images/calcCal.png" alt="calorias" class="logo" />
-    <h1 class="title beauty-shadow">Calculadora Taxa Metabólica Basal</h1>
-  </header>
+		<main class="container">
+			<form>
+				<fieldset>
+					<div class="field-group">
+						<label data-locale="field-gender-label" for="select_gender"
+							>SEXO:</label
+						>
+						<select name="gender" id="select_gender">
+							<option data-locale="field-gender-option-male" value="Feminino">
+								Feminino
+							</option>
+							<option
+								data-locale="field-gender-option-female"
+								value="Masculino"
+							>
+								Masculino
+							</option>
+						</select>
+					</div>
 
-  <main class="container">
-    <form class="form" id="formulario" onsubmit="return calcular(event)">
-      <fieldset>
-        <div class="field-group">
-          <label for="genero">SEXO:</label>
-          <select name="genero" id="genero">
-            <option value="Feminino">Feminino</option>
-            <option value="Masculino">Masculino</option>
-          </select>
-        </div>
+					<div class="field-group">
+						<label data-locale="field-weight-label" for="input_weight"
+							>Peso <small>(kg)</small>:</label
+						>
+						<input
+							type="number"
+							name="weight"
+							id="input_weight"
+							step="0.01"
+							min="0"
+							size="4"
+							autofocus
+							required
+							placeholder="70"
+						/>
+					</div>
 
-        <div class="field-group">
-          <label for="peso">PESO <small>(kg)</small>:</label>
-          <input type="number" name="peso" id="peso" step="0.01" min="0" size="4" autofocus required placeholder="70" />
-        </div>
+					<div class="field-group">
+						<label data-locale="field-height-label" for="input_height"
+							>Altura <small>(cm)</small>:</label
+						>
+						<input
+							type="number"
+							name="height"
+							id="input_height"
+							step="0.01"
+							min="0"
+							size="5"
+							required
+							placeholder="170"
+						/>
+					</div>
 
-        <div class="field-group">
-          <label for="altura">ALTURA <small>(cm)</small>:</label>
-          <input type="number" name="altura" id="altura" step="0.01" min="0" size="5" required placeholder="170" />
-        </div>
+					<div class="field-group">
+						<label data-locale="field-age-label" for="input_age"
+							>Idade <small>(anos)</small>:</label
+						>
+						<input
+							type="number"
+							name="age"
+							id="input_age"
+							step="1.00"
+							min="0"
+							size="4"
+							required
+							placeholder="25"
+						/>
+					</div>
 
-        <div class="field-group">
-          <label for="idade">IDADE <small>(anos)</small>:</label>
-          <input type="number" name="idade" id="idade" step="1.00" min="0" size="4" required placeholder="25" />
-        </div>
+					<div class="field-btn">
+						<button data-locale="button-submit" type="submit" class="button">
+							Calcular
+						</button>
+					</div>
+				</fieldset>
+			</form>
 
-        <div class="field-btn">
-          <input type="submit" class="button" value="CALCULAR" />
-        </div>
-      </fieldset>
-    </form>
+			<div class="resultado-container" id="resultado">
+				<h2 data-locale="result-title" class="result">Seu resultado:</h2>
+				<div class="result-list" id="result-data" style="visibility: hidden">
+					<ul>
+						<li>
+							<span data-locale="result-li-basal-metabolism"
+								>Metabolismo Basal:</span
+							>
+							<span id="result-tmb" class="result-item"></span> cal
+						</li>
+						<li>
+							<span data-locale="result-li-sedentary"
+								>Sedentário controle remoto:</span
+							>
+							<span id="result-sedentary-calores" class="result-item"></span>
+							cal
+						</li>
+						<li>
+							<span data-locale="result-li-light-exercise"
+								>Exercício leve:</span
+							>
+							<span
+								id="result-light-exercise-calories"
+								class="result-item"
+							></span>
+							cal
+						</li>
+						<li>
+							<span data-locale="result-li-moderate-exercise"
+								>Exercício moderado:</span
+							>
+							<span
+								id="result-moderate-exercise-calories"
+								class="result-item"
+							></span>
+							cal
+						</li>
+						<li>
+							<span data-locale="result-li-regular-exercise"
+								>Exercício regular:</span
+							>
+							<span
+								id="result-active-exercise-calories"
+								class="result-item"
+							></span>
+							cal
+						</li>
+						<li>
+							<span data-locale="result-li-two-hours-diary-exercise"
+								>Exercício 2 horas por dia:</span
+							>
+							<span
+								id="result-super-active-exercise-calories"
+								class="result-item"
+							></span>
+							cal
+						</li>
+					</ul>
 
-    <div class="resultado-container" id="resultado">
-      <h2 class="result">
-        SEU RESULTADO:
-      </h2>
-      <div class="result-list" id="result-data" style="visibility: hidden">
-        <ul>
-          <li>Metabolismo Basal : <span id="metabolismo_basal" class="result-item"></span> cal</li>
-          <li>Sedentário controle remoto : <span id="sedentario" class="result-item"></span> cal</li>
-          <li>Exercício light : <span id="exercicio_leve" class="result-item"></span> cal</li>
-          <li>Exercício moderado: <span id="exercicio_moderado" class="result-item"></span> cal</li>
-          <li>Exercício regular : <span id="ativo" class="result-item"></span> cal</li>
-          <li>Exercício 2 horas por dia: <span id="super_ativo" class="result-item"></span> cal</li>
-        </ul>
+					<h3 data-locale="result-to-gain-weight-title" class="x-padd">
+						Para ganhar peso:
+					</h3>
 
-        <h3 class="x-padd">GANHAR PESO:</h3>
+					<p>
+						<span data-locale="result-to-gain-weight-description"
+							>Para ganhar peso você deve consumir:</span
+						>
+						<span
+							id="result-to-weight-gain-calories"
+							class="result-peso"
+						></span>
+						cal<small data-locale="result-diary-annotation"
+							>(diariamente)</small
+						>
+					</p>
 
-        <p>
-          Para ganhar peso você deve consumir:
-          <span id="ganhar_peso" class="result-peso"></span> cal<small> (diariamente)</small>
-        </p>
+					<h3 data-locale="result-to-lose-weight-title" class="x-padd">
+						PERDER PESO:
+					</h3>
 
-        <h3 class="x-padd">PERDER PESO:</h3>
+					<p>
+						<span data-locale="result-to-lose-weight-description"
+							>Para perder peso você deve consumir até:</span
+						>
+						<span
+							id="result-to-weight-loss-calories"
+							class="result-peso"
+						></span>
+						cal
+					</p>
 
-        <p>
-          Para perder peso você deve consumir até:
-          <span id="perder_peso" class="result-peso"></span> cal
-        </p>
+					<h3 data-locale="result-imc-title" class="x-padd">Dados IMC:</h3>
 
-        <h3 class="x-padd">Dados IMC:</h3>
+					<ul>
+						<li>
+							<span data-locale="result-imc-li-prefix">IMC:</span>
+							<span id="imc"></span>
+						</li>
+						<li>
+							<span data-locale="result-imc-li-classification"
+								>Classificação:</span
+							>
+							<span id="imc_classification"></span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</main>
 
-        <ul>
-          <li>IMC: <span id="imc"></span></li>
-          <li>Classificação: <span id="imc_classification"></span> </li>
-        </ul>
+		<footer>
+			<div class="rodape text-left">
+				<h4 data-locale="footer-title" class="text-center">Referências</h4>
+				<ul>
+					<li>
+						<a
+							href="https://github.com/adalbertobrant/metabolismobasal/graphs/contributors"
+							><i class="material-icons">article</i
+							><span data-locale="footer-link-contribuitors"
+								>Contribuidores</span
+							>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.leighpeele.com/mifflin-st-jeor-calculator"
+							><i class="material-icons">article</i
+							><span data-locale="footer-link-calculation"
+								>Como é feito o cálculo</span
+							></a
+						>
+					</li>
+					<li>
+						<a
+							href="https://www.scielo.br/pdf/abcd/v29n3/pt_0102-6720-abcd-29-03-00185.pdf"
+							><i class="material-icons">article</i
+							><span data-locale="footer-link-harrisbenedict"
+								>Importância da Equação de Harris-Benedict</span
+							>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
 
-      </div>
-    </div>
-  </main>
-
-  <footer>
-    <div class="rodape text-left">
-      <h4 class="text-center">REFERÊNCIAS</h4>
-      <ul>
-        <li>
-          <a href="https://github.com/adalbertobrant/metabolismobasal/graphs/contributors"><i
-              class="material-icons">article</i>Contribuidores
-          </a>
-        </li>
-        <li>
-          <a href="https://www.leighpeele.com/mifflin-st-jeor-calculator"><i class="material-icons">article</i>Como é
-            feito o cálculo</a>
-        </li>
-        <li>
-          <a href="https://www.scielo.br/pdf/abcd/v29n3/pt_0102-6720-abcd-29-03-00185.pdf"><i
-              class="material-icons">article</i>IMPORTÂNCIA DA EQUAÇÃO DE
-            HARRIS-BENEDICT
-          </a>
-        </li>
-      </ul>
-    </div>
-  </footer>
-</body>
-
+		<script type="module" src="./public/scripts/index.js"></script>
+		<script type="module" src="./public/scripts/dropdown.js"></script>
+		<script type="module" src="./public/scripts/language-switcher.js"></script>
+	</body>
 </html>
