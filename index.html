@@ -16,7 +16,7 @@
 
 		<title data-locale="page-title">Calculadora de Taxa Metabólica Basal</title>
 
-		<link rel="stylesheet" type="text/css" href="public/styles/style.css" />
+		<link rel="stylesheet" type="text/css" href="src/styles/style.css" />
 		<link rel="icon" href="./public/images/favicon.png" />
 	</head>
 
@@ -26,6 +26,8 @@
 				<div class="dropdown-header">
 					<span data-locale="language-dropdown-span">Idioma:</span>
 					<img
+						class="flag"
+						style="margin-top: 8px"
 						data-locale="language-dropdown-flag"
 						src="./public/images/flag-br.png"
 					/>
@@ -34,7 +36,7 @@
 					<li data-lang="pt-BR">
 						<img
 							class="flag"
-							src="./public/images/flag-br.png"
+							src="./public/images/flags/br.svg"
 							alt="Português (Brasil)"
 							title="Português (Brasil)"
 						/>
@@ -42,7 +44,7 @@
 					<li data-lang="es-ES">
 						<img
 							class="flag"
-							src="./public/images/flag-es.png"
+							src="./public/images/flags/es.svg"
 							alt="Español"
 							title="Español"
 						/>
@@ -50,7 +52,7 @@
 					<li data-lang="it-IT">
 						<img
 							class="flag"
-							src="./public/images/flag-it.png"
+							src="./public/images/flags/it.svg"
 							alt="Italiano"
 							title="Italiano"
 						/>
@@ -58,7 +60,7 @@
 					<li data-lang="en-US">
 						<img
 							class="flag"
-							src="./public/images/flag-us.png"
+							src="./public/images/flags/us.svg"
 							alt="English"
 							title="English"
 						/>
@@ -68,9 +70,9 @@
 		</div>
 
 		<header>
-			<img src="./public/images/calcCal.png" alt="calorias" class="logo" />
+			<img src="./public/images/logo.png" alt="calorias" class="logo" />
 			<h1 data-locale="header-title" class="title beauty-shadow">
-				Calculadora Taxa Metabólica Basal
+				Calculadora Taxa Metabólica BasalL
 			</h1>
 		</header>
 
@@ -79,16 +81,13 @@
 				<fieldset>
 					<div class="field-group">
 						<label data-locale="field-gender-label" for="select_gender"
-							>SEXO:</label
+							>Sexo:</label
 						>
 						<select name="gender" id="select_gender">
-							<option data-locale="field-gender-option-male" value="Feminino">
+							<option data-locale="field-gender-option-male" value="F">
 								Feminino
 							</option>
-							<option
-								data-locale="field-gender-option-female"
-								value="Masculino"
-							>
+							<option data-locale="field-gender-option-female" value="M">
 								Masculino
 							</option>
 						</select>
@@ -294,8 +293,8 @@
 			</div>
 		</footer>
 
-		<script type="module" src="./public/scripts/index.js"></script>
-		<script type="module" src="./public/scripts/dropdown.js"></script>
-		<script type="module" src="./public/scripts/language-switcher.js"></script>
+		<script type="module" src="./src/index.js"></script>
+		<script type="module" src="./src/scripts/dropdown.js"></script>
+		<script type="module" src="./src/scripts/language-switcher.js"></script>
 	</body>
 </html>

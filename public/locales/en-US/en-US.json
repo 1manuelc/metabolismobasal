@@ -1,7 +1,7 @@
 {
     "page-title": "Basal Metabolic Rate Calculator",
     "language-dropdown-span": "Language:",
-    "language-dropdown-flag": "./public/images/flag-us.png",
+    "language-dropdown-flag": "./public/images/flags/us.svg",
     "header-title": "Basal Metabolic Rate Calculator",
     "field-gender-label": "Gender",
     "field-gender-option-male": "Male",

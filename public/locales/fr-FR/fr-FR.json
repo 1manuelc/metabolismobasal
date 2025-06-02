@@ -1,7 +1,7 @@
 {
     "page-title": "Calculateur du Taux Métabolique de Base",
     "language-dropdown-span": "Langue :",
-    "language-dropdown-flag": "./public/images/flag-fr.png",
+    "language-dropdown-flag": "./public/images/flags/fr.svg",
     "header-title": "Calculateur du Taux Métabolique de Base",
     "field-gender-label": "Sexe",
     "field-gender-option-male": "Homme",

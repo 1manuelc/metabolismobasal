@@ -1,7 +1,7 @@
 {
     "page-title": "Calculadora de Tasa Metabólica Basal",
     "language-dropdown-span": "Idioma:",
-    "language-dropdown-flag": "./public/images/flag-es.png",
+    "language-dropdown-flag": "./public/images/flags/es.svg",
     "header-title": "Calculadora de Tasa Metabólica Basal",
     "field-gender-label": "Sexo",
     "field-gender-option-male": "Hombre",

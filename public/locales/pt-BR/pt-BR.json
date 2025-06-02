@@ -1,7 +1,7 @@
 {
     "page-title": "Calculadora de Taxa Metabólica Basal",
     "language-dropdown-span": "Idioma:",
-    "language-dropdown-flag": "./public/images/flag-br.png",
+    "language-dropdown-flag": "./public/images/flags/br.svg",
     "header-title": "Calculadora de Taxa Metabólica Basal",
     "field-gender-label": "Gênero",
     "field-gender-option-male": "Masculino",
