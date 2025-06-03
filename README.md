@@ -1,4 +1,4 @@
-<p align="center"><img src="./public/images/calcCal.png" alt="metabolismo-basal-icon" width="300px"/></p>
+<p align="center"><img src="./public/images/logo.png" alt="metabolismo-basal-icon" width="300px"/></p>
 
 # metabolismobasal
 
