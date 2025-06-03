@@ -2,7 +2,7 @@ import {
 	calculateImc,
 	calculateTmb,
 	getImcClassification,
-} from '../../public/scripts/formulas.js';
+} from '../../scripts/formulas.js';
 
 describe('calculateImc', () => {
 	test('aplicação possui IMC', () => {
@@ -20,7 +20,7 @@ describe('calculateImc', () => {
 		expect(imc).toBeNull();
 	});
 	test('aplicação que retorna o resultado dos calculos do TMB', () => {
-		const tmb = calculateTmb(70, 21, 171, 'Masculino');
+		const tmb = calculateTmb(70, 21, 171, 'M');
 		expect(tmb.active_exercise_calories).toBe(2878.59375);
 	});
 

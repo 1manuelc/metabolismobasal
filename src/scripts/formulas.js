@@ -22,7 +22,7 @@ function getImcClassification(imc) {
 de acordo com a prática esportiva*/
 function calculateTmb(weight, age, height, gender) {
 	const tmbRate =
-		gender === 'Masculino'
+		gender === 'M'
 			? 10 * weight + 6.25 * height - 5 * age + 5
 			: 10 * weight + 6.25 * height - 5 * age - 161;
 

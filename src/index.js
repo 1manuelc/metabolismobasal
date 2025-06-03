@@ -2,7 +2,7 @@ import {
 	calculateImc,
 	getImcClassification,
 	calculateTmb,
-} from './formulas.js';
+} from './scripts/formulas.js';
 
 document.querySelector('form').addEventListener('submit', handleSubmit);
 
