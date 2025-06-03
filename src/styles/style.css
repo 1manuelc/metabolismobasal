@@ -124,9 +124,10 @@ form fieldset {
 form .field-group {
 	padding-top: 1rem;
 	font-size: 1.3rem;
-	display: flex;
+	display: grid;
 	justify-content: space-between;
 	align-items: center;
+	grid-template-columns: 1fr 1fr 1fr;
 }
 
 form .field-group:first-child {
@@ -134,7 +135,11 @@ form .field-group:first-child {
 }
 
 form .field-group label[for='genero'] {
-	margin-right: 0.8rem;
+	padding-right: 0.8rem;
+}
+
+form .field-group:has([data-locale='field-gender-label']) {
+	grid-template-columns: 1fr 1fr;
 }
 
 .field-group label {
@@ -170,14 +175,15 @@ form .field-btn {
 	cursor: pointer;
 	display: block;
 	border: none;
-	padding: 14.5px 29px;
-	border-radius: 10px;
+	padding: 8px 12px;
+	border-radius: 8px;
 	color: #fff;
-	font-size: 1.3rem;
+	font-size: 18px;
 	text-decoration: none;
+	font-weight: 600;
 	background-color: #34cb79;
 	margin: 0.4rem auto;
-	transition: 0.3s all;
+	transition: 0.3s background-color;
 	outline: 0;
 }
 
@@ -313,14 +319,13 @@ footer ul li a:hover {
 	vertical-align: middle;
 }
 
-/* Responsividade */
-@media (max-width: 1180px) {
+@media screen and (width <= 1180px) {
 	header h1.title {
 		font-size: 2.5rem;
 	}
 }
 
-@media (max-width: 888px) {
+@media screen and (width < 768px) {
 	header {
 		display: flex;
 		justify-content: space-around;
@@ -329,10 +334,6 @@ footer ul li a:hover {
 	header h1.title {
 		font-size: 2rem;
 	}
-
-	/* header img.logo {
-    width: 7%;
-  } */
 
 	.container {
 		max-width: 90vw;
@@ -347,5 +348,14 @@ footer ul li a:hover {
 	.resultado-container {
 		width: 100%;
 		margin: 15px 0;
+	}
+
+	.dropdown-list {
+		max-height: 288px;
+		overflow-y: auto;
+	}
+
+	.button {
+		width: 100%;
 	}
 }
