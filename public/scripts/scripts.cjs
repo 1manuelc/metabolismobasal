@@ -7,12 +7,17 @@ function calcular(event) {
   const genero = selecionaGeneroDoUsuario("genero");
   const dados = calcTMB(peso, idade, altura, genero);
   const dadosIMC = calcIMC(peso, altura);
+  const ganhoMassaMin = peso * 0.8;
+  const ganhoMassaMax = peso * 1.4;
+  const ganharMassa = [ganhoMassaMin, ganhoMassaMax];
+
 
   mostrarResultados(dados, dadosIMC);
 }
 
 function mostrarResultados(dados, dadosIMC) {
   document.querySelectorAll(".result-item").forEach((item, index) => {
+
     item.innerHTML = Math.ceil(dados[0][index]);
   });
 
@@ -84,6 +89,11 @@ function mostrarResultados(niveisAtividade, metasPeso, dadosIMC) {
   const textoClassificacaoIMC = window.mensagensIMC && window.mensagensIMC[chaveClassificacaoIMC] ? window.mensagensIMC[chaveClassificacaoIMC] : chaveClassificacaoIMC;
   document.getElementById('imc_classification').innerHTML = textoClassificacaoIMC;
   document.getElementById('result-data').style.visibility = 'visible';
+  document.getElementById('result-obj').style.visibility = 'visible';
+
+  document.getElementById('ganhar_massa').innerHTML = ganharMassa.map((item) => {
+    return Math.ceil(item);
+  }).join(' ~ ');
 };
 
 
